@@ -1,3 +1,36 @@
+'''
+a: [(s.txt, 3), (m.txt, 1)]
+bb: [(s.txt, 3), (m.txt 2)]
+ccc: [(s.txt, 2), (m.txt 2)]
+d: [(s.xtx, 1), (m.txt 4)]
+e:[(m.txt,1)]
+
+index_map={
+    'a':[('s.txt', 3), ('m.txt', 1)],
+    'bb': [('s.txt', 3), ('m.txt', 2)],
+    'ccc': [('s.txt', 2), ('m.txt' ,2)],
+    'd': [('s.txt', 1), ('m.txt', 4)],
+    'e':[('m.txt',1)]
+}
+qs=input()
+sorted_pairs = sorted(index_map[qs], key=lambda x: -x[1])
+print(sorted_pairs)
+'''
+
+
+'''
+count the frequency of each string in the given string
+input: if you fire the fire i will fire you i am the fire
+output: if : 1
+        you : 2
+        fire : 4
+        the : 2
+        i :2
+        will : 1
+        am : 1
+'''
+
+
 import os
 word_filecount={}
 
@@ -36,12 +69,40 @@ def count_freq(input_string,file_name):
         else:
             word_filecount[word]=[(file_name,count)]
 
-        #print(f"{word}:{count}")
+
+
 
 
 folder_location = 'C:\\Users\\HP\\Documents\\from_dilip\\stories\\stories'
 read_all_files(folder_location)
+
+
+
 while True:
     user_input=input()
+    if user_input in word_filecount:
+        a=word_filecount[user_input]
+        sorted_list = sorted(a, key=lambda x: x[1], reverse=True)
+        top_five=sorted_list[:5]
+        print(top_five)
 
-    print(word_filecount[user_input])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
